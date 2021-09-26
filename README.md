@@ -63,3 +63,26 @@ Developer B realizes that Developer A has pushed his work to remote, so she begi
 She then adds the `index.html` file. Notice, this change only occurs on the `index` branch, `main` is unchanged until the changes are merged. She then adds, commits, and pushes her changes to the remote repo.
 
 The remote repository currently looks like this. (Bold lettering represents different branches.)
+
+**main**
+ - project
+   - app.js
+  
+**index**
+ - project
+   - app.js
+   - index.html
+
+Developer A hears about Developer B's changes and wants to take a look at them before merging them into the `main` branch. He runs `git pull` on his machine to pull down the new changes. Running `git checkout index` switches his working tree to the `index` branch, changing all of the files in his repo to the state they have in the latest commit in said branch. After reviewing the changes, he decides to merge them into `main`. He runs `git checkout main` to switch back to the `main` branch, then runs `git merge index` to merge the changes in `index` into `main`. He commits his changes, and pushes to remote. The remote repository now looks like this.
+
+**main**
+ - project
+   - app.js
+   - index.html
+  
+**index**
+ - project
+   - app.js
+   - index.html
+
+This is a very simplified example of the type of work you can do with git, but it gives one a basic idea of how you can easily collaborate with others using the tools provided by the software.
